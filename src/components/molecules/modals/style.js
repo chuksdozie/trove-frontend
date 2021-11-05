@@ -1,0 +1,48 @@
+import { makeStyles } from "@material-ui/core";
+
+export const useStyles = makeStyles(() => ({
+  container: {
+    height: "100vh",
+    width: "100%",
+    backgroundColor: "rgba(241,241,241,0.7)",
+    position: "fixed",
+    top: 0,
+    overflowY: "hidden",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 2,
+  },
+  modalBox: {
+    height: "auto",
+    width: "400px",
+    backgroundColor: "white",
+    position: "fixed",
+    overflowY: "hidden",
+    borderRadius: "7px",
+    padding: "20px 10px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    boxShadow: "0px 0px 3px 2px rgba(50,200,200,0.1)",
+    zIndex: 3,
+  },
+  header: {
+    width: "95%",
+    backgroundColor: "white",
+    display: "flex",
+    justifyContent: "space-between",
+    alignSelf: "flex-start",
+    alignItems: "center",
+  },
+  message: {
+    width: "90%",
+    // backgroundColor: "yellow",
+    display: "flex",
+    justifyContent: "space-between",
+    alignSelf: "flex-start",
+    alignItems: "center",
+    padding: "20px 20px",
+  },
+}));
