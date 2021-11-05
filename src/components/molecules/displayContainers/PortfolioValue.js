@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { Grid } from "@mui/material";
 import Text from "../../atoms/text/Text";
-import { UserContext, StockContext } from "../../../store/UserContext";
+import { UserContext } from "../../../store/UserContext";
 
 const PortfolioValueContainer = () => {
   const { user } = useContext(UserContext);
-  const { stock } = useContext(StockContext);
-  console.log(stock[0], "555");
   return (
     <div
       style={{

@@ -22,7 +22,6 @@ const Loan = (props) => {
 
   const handleLoanClick = async () => {
     setLoading("flex");
-    console.log("handling");
     const loanRequestDetails = {
       amount: loanValue,
       duration: durationValue,

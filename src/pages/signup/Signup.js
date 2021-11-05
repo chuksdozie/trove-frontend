@@ -28,52 +28,42 @@ const Signup = () => {
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
-    console.log(firstName);
   };
 
   const handleLastNameChange = (e) => {
     setLastName(e.target.value);
-    console.log(lastName);
   };
 
   const handlePhonenumberChange = (e) => {
     setPhonenumber(e.target.value);
-    console.log(phonenumber);
   };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
-    console.log(email);
   };
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
-    console.log(password);
   };
 
   const handleBankNameChange = (e) => {
     setBankName(e.target.value);
-    console.log(bankName);
   };
 
   const handleBankHolderChange = (e) => {
     setBankHolder(e.target.value);
-    console.log(bankHolder);
   };
 
   const handleBankAccountNumberChange = (e) => {
     setBankAccountNumber(e.target.value);
-    console.log(bankAccountNumber);
   };
 
   const handleDateOfBirthChange = (e) => {
     setDateOfBirth(e.target.value);
-    console.log(dateOfBirth);
   };
 
   const handleSignup = async () => {
     setLoading("flex");
-    console.log("handling");
     const signupDetails = await signup(
       firstName,
       lastName,
@@ -86,14 +76,11 @@ const Signup = () => {
       dateOfBirth
     );
     setLoading("none");
-    console.log(signupDetails);
     if (!signupDetails.id) {
-      console.log(signupDetails.error);
       setShowNotifier("flex");
       setModalTitle("Error");
       setMessage(signupDetails.error);
     } else {
-      console.log(signupDetails);
       setShowNotifier("flex");
       setModalTitle("Success");
       setMessage("Account Created Successfully. Login to Continue");

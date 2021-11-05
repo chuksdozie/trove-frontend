@@ -30,42 +30,34 @@ const Profile = (props) => {
 
   const handleFirstNameChange = (e) => {
     setFirstNameValue(e.target.value);
-    console.log(firstNameValue);
   };
 
   const handleLastNameChange = (e) => {
     setLastNameValue(e.target.value);
-    console.log(lastNameValue);
   };
 
   const handleBankNameChange = (e) => {
     setBankNameValue(e.target.value);
-    console.log(bankNameValue);
   };
 
   const handleBankHolderChange = (e) => {
     setBankHolderValue(e.target.value);
-    console.log(bankHolderValue);
   };
 
   const handleBankAccountChange = (e) => {
     setBankAccountValue(e.target.value);
-    console.log(bankAccountValue);
   };
 
   const handleOldPasswordChange = (e) => {
     setOldPasswordValue(e.target.value);
-    console.log(oldPasswordValue);
   };
 
   const handleNewPasswordChange = (e) => {
     setNewPasswordValue(e.target.value);
-    console.log(newPasswordValue);
   };
 
   const handleConfirmPasswordChange = (e) => {
     setConfirmPasswordValue(e.target.value);
-    console.log(confirmPasswordValue);
   };
 
   const handleUserUpdate = async (e) => {
@@ -85,7 +77,6 @@ const Profile = (props) => {
       userUpdate.bank_account_number
     );
     setLoading("none");
-    console.log(myUpdate);
     if (!myUpdate.id) {
       console.log("an error");
       setShowNotifier("flex");
@@ -100,7 +91,6 @@ const Profile = (props) => {
         bank_username: myUpdate.bank_username,
         bank_account_number: myUpdate.bank_account_number,
       });
-      console.log(user, 999);
       setShowNotifier("flex");
       setModalTitle("Success");
       setMessage("User Details Updated!");
@@ -115,7 +105,6 @@ const Profile = (props) => {
       new_password: newPasswordValue,
       confirm_new_password: confirmPasswordValue,
     };
-    console.log(passwordUpdate, 56474);
     const myUpdate = await updatePassword(
       passwordUpdate.old_password,
       passwordUpdate.new_password,
@@ -124,7 +113,6 @@ const Profile = (props) => {
     setLoading("none");
     console.log(myUpdate);
     if (!myUpdate.id) {
-      console.log("password error");
       setShowNotifier("flex");
       setModalTitle("Error");
       setMessage(myUpdate.error);
@@ -136,7 +124,6 @@ const Profile = (props) => {
         ...user,
         password: myUpdate.password,
       });
-      console.log(user, 7789);
       setShowNotifier("flex");
       setModalTitle("Success");
       setMessage("Password Updated!");

@@ -27,20 +27,14 @@ export const login = async (email, password) => {
   var res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data.data.userDetails);
       res = response.data.data.userDetails;
       const token = response.data.data.token;
-      console.log(token);
       // Save bearer token to sessionStorage
       localStorage.setItem("sessionToken", token);
       localStorage.setItem("userInfo", response.data.data.userDetails);
       localStorage.setItem("userId", response.data.data.userDetails.id);
-      console.log(localStorage.getItem("userId"));
-      console.log(PORTFOLIOS);
     })
     .catch(function (error) {
-      console.log(`${error.response.data.error}`);
-      console.log(localStorage.getItem("userId"), 554);
       res = error.response.data.error;
     });
   return res;
@@ -81,11 +75,9 @@ export const signup = async (
   var res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data.data);
       res = response.data.data;
     })
     .catch(function (error) {
-      console.log(error.response.data);
       res = error.response.data;
     });
   return res;
@@ -103,12 +95,9 @@ export const portfolios = async () => {
   var res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data.data);
       res = response.data.data;
     })
     .catch(function (error) {
-      console.log(error);
-      console.log(localStorage.getItem("userId"));
       res = error.response.data;
     });
   return res;
@@ -126,11 +115,9 @@ export const loans = async () => {
   let res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data);
       res = response.data.data;
     })
     .catch(function (error) {
-      console.log(error);
       res = error.response.data;
     });
   return res;
@@ -148,11 +135,9 @@ export const loansHistory = async () => {
   let res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data.data);
       res = response.data.data;
     })
     .catch(function (error) {
-      console.log(error);
       res = error.response.data;
     });
   return res;
@@ -176,11 +161,9 @@ export const requestLoan = async (amount, duration) => {
   var res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data.data);
       res = response.data.data;
     })
     .catch(function (error) {
-      console.log(error.response.data);
       res = error.response.data;
     });
   return res;
@@ -213,11 +196,9 @@ export const updateUser = async (
   var res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data.data);
       res = response.data.data;
     })
     .catch(function (error) {
-      console.log(error.response.data);
       res = error.response.data;
     });
   return res;
@@ -246,11 +227,9 @@ export const updatePassword = async (
   var res;
   await axios(config)
     .then(function (response) {
-      console.log(response.data.data);
       res = response.data.data;
     })
     .catch(function (error) {
-      console.log(error.response.data);
       res = error.response.data;
     });
   return res;

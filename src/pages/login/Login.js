@@ -17,12 +17,12 @@ import {
 } from "../../store/UserContext";
 
 const Login = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const { setLoading } = useContext(LoadingContext);
   const { setStock } = useContext(StockContext);
   const { setLoan } = useContext(LoanContext);
   const { setLoanHistory } = useContext(LoanHistoryContext);
-  const [loginDetails, setLoginDetails] = useState({});
+  const [setLoginDetails] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showNotifier, setShowNotifier] = useState("none");
@@ -33,11 +33,9 @@ const Login = () => {
 
   const emailChange = (e) => {
     setEmail(e.target.value);
-    console.log(email);
   };
   const passwordChange = (e) => {
     setPassword(e.target.value);
-    console.log(password);
   };
 
   const handleSubmit = async () => {
@@ -51,28 +49,19 @@ const Login = () => {
     var loaner = await loans();
     var loanerHis = await loansHistory();
     setStock(port);
-    console.log(users, "-/-/-/-");
-    console.log(port, "-----");
-    console.log(loaner, "****");
-    console.log(loanerHis, "7542");
     setLoan(loaner);
     setLoanHistory(loanerHis);
-    console.log(user, 3311111);
     setLoading("none");
     if (!users.id) {
-      console.log("++", users);
-      console.log("boss");
       setShowNotifier("flex");
       setMessage(users);
       setModalTitle("Error");
-      console.log(showNotifier);
     } else {
       setUser(users);
       setShowNotifier("flex");
       setMessage("You are now logged in");
       setModalTitle("Success");
     }
-    console.log(loginDetails);
   };
 
   return (

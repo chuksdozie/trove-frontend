@@ -25,7 +25,6 @@ const columns = [
 const Table = () => {
   const { loanHistory } = useContext(LoanHistoryContext);
   const rows = loanHistory;
-  console.log(rows, "5555");
   return (
     <div style={{ width: "100%", height: "400px" }}>
       <DataGrid

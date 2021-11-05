@@ -4,7 +4,6 @@ import Text from "../../atoms/text/Text";
 import { LoanContext } from "../../../store/UserContext";
 const LoanContainer = () => {
   const { loan } = useContext(LoanContext);
-  console.log(loan, "4210");
   return (
     <div
       style={{
@@ -44,7 +43,7 @@ const LoanContainer = () => {
         >
           <Text value={`Amount Left`} color={"#fff"} fontSize="15px" />
           <Text
-            value={loan === undefined ? "No Debts" : loan.amount_left}
+            value={loan === undefined ? "No Debts" : `$${loan.amount_left}`}
             color={"#fff"}
             fontSize="70px"
           />
